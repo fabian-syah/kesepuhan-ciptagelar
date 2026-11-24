@@ -233,7 +233,7 @@ export default function ScrollyMaster() {
             >
               <video
                 src="/assets/media/dawn-mist.mp4"
-                poster="/assets/media/dawn-poster.jpg"
+                poster="/assets/media/dawn-poster.webp"
                 autoPlay
                 muted
                 loop
