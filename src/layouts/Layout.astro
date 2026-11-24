@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import SmoothScroll from '../components/SmoothScroll.astro';
+import CustomCursor from '../components/CustomCursor';
+import LoadingScreen from '../components/LoadingScreen.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Kasepuhan Ciptagelar | Walking Through Tradition",
+  description = "A scrollytelling journey through Kasepuhan Ciptagelar, the indigenous Sundanese community in Sukabumi, West Java."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="image" href="/assets/media/dawn-poster.webp" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="bg-[#1C1814] text-[#F7F5EE] antialiased selection:bg-[#C89B3C] selection:text-[#1C1814]">
+    <LoadingScreen />
+    <CustomCursor client:load />
+    <Navbar />
+    <slot />
+    <SmoothScroll />
+  </body>
+</html>

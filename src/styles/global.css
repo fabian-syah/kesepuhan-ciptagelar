@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-warm-white: #F7F5EE;
+  --color-soil-brown: #1C1814;
+  --color-straw-gold: #C89B3C;
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --bg-color: #1C1814;
+  --text-color: #F7F5EE;
+  --accent-color: #C89B3C;
+}
+
+html {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  background-color: #1C1814;
+  color: #F7F5EE;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography styles */
+.font-serif {
+  font-family: 'Lora', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Color utility aliases */
+.bg-soil {
+  background-color: #1C1814;
+}
+
+.bg-warm {
+  background-color: #F7F5EE;
+}
+
+.bg-straw {
+  background-color: #C89B3C;
+}
+
+.text-soil {
+  color: #1C1814;
+}
+
+.text-warm {
+  color: #F7F5EE;
+}
+
+.text-straw {
+  color: #C89B3C;
+}
+
+.border-soil {
+  border-color: #1C1814;
+}
+
+.border-warm {
+  border-color: #F7F5EE;
+}
+
+.border-straw {
+  border-color: #C89B3C;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C1814;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #362E27;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C89B3C;
+}
+
+/* Lenis recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button {
+    cursor: none;
+  }
+}
+
+/* Accessibility: respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

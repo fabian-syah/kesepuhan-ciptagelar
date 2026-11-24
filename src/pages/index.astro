@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ScrollyMaster from '../components/ScrollyMaster';
+import CulturalCarousel from '../components/CulturalCarousel';
+import ClosingSection from '../components/ClosingSection.astro';
+---
+
+<Layout
+  title="Kasepuhan Ciptagelar | An Indigenous Scrollytelling Journey"
+  description="Recreating the filmic scroll experience for Kasepuhan Ciptagelar. Ancestral rice barns, sacred harvest thanksgiving, and customary living heritage in Sukabumi, West Java."
+>
+  <main id="top" class="w-full bg-[#1C1814]">
+    <ScrollyMaster client:load />
+    <CulturalCarousel client:visible />
+    <ClosingSection />
+  </main>
+</Layout>

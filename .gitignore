@@ -1,0 +1,19 @@
+# Build and dependencies
+node_modules/
+dist/
+.astro/
+
+# Environment and secrets
+.env
+.env.production
+.env.local
+*.env
+
+# Local temp and scratch
+scratch/
+.system_generated/
+.playwright-mcp/
+
+# OS files
+.DS_Store
+Thumbs.db
